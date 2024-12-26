@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido a mi Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-index.css">
+    <style>
+        /* Fondo animado con efecto blur */
+        #background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/hackerman.gif') no-repeat center center/cover;
+            z-index: -1;
+            filter: blur(7px); /* Aplica desenfoque solo al fondo */
+        }
+
+        /* Contenedor principal */
+        #welcome-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            position: relative; /* Asegura que el contenido esté por encima del fondo */
+        }
+
+        /* Título */
+        #welcome-title {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            position: relative; /* Necesario para el efecto glitch */
+            color: #00ffcc; /* Color principal */
+        }
+
+        /* Efecto glitch */
+        #welcome-title:hover {
+            animation: glitch 0.5s infinite;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px red, -2px -2px blue;
+            }
+            25% {
+                text-shadow: -2px 2px lime, 2px -2px yellow;
+            }
+            50% {
+                text-shadow: 2px -2px pink, -2px 2px cyan;
+            }
+            75% {
+                text-shadow: -2px -2px magenta, 2px 2px orange;
+            }
+            100% {
+                text-shadow: 2px 2px red, -2px -2px blue;
+            }
+        }
+
+        /* Botón */
+        #retro-button {
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            padding: 10px 20px;
+            color: white;
+            background-color: #039d01;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #retro-button:hover {
+            background-color: #00ff22;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Fondo con blur -->
+    <div id="background"></div>
+
+    <!-- Contenido principal -->
+    <div id="welcome-container">
+        <h1 id="welcome-title">¡Bienvenido a mi Portafolio!</h1>
+        <button id="retro-button" onclick="irAlPortafolio()">▶ Ir al Portafolio</button>
+    </div>
+
+    <!-- Script -->
+    <script>
+        // Redirige al archivo Main.html
+        function irAlPortafolio() {
+            window.location.href = 'Main.html';
+        }
+    </script>
+</body>
+</html>
